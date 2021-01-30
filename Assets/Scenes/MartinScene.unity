@@ -264,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8478066686561881654, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2109105083019727838, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
@@ -614,22 +618,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7415346655467150289, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: m_Size.x
-      value: 3.6180096
-      objectReference: {fileID: 0}
-    - target: {fileID: 7415346655467150289, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: m_Size.y
-      value: 4.5938897
-      objectReference: {fileID: 0}
-    - target: {fileID: 7415346655467150289, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: m_Center.x
-      value: 0.20900536
-      objectReference: {fileID: 0}
-    - target: {fileID: 7415346655467150289, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: m_Center.y
-      value: -0.21974921
-      objectReference: {fileID: 0}
     - target: {fileID: 7415346655467150290, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -674,21 +662,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7415346655467150291, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: movementSpeed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 7415346655467150293, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7415346655467150293, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7415346656336734519, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}

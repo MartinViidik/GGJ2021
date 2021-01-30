@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
         ai.SearchPath();
         ReachedDestination = false;
     }
-    private IEnumerator SetStunned()
+    public IEnumerator SetStunned()
     {
         isStunned = true;
         ai.maxSpeed = 0;
@@ -61,6 +61,11 @@ public class EnemyAI : MonoBehaviour
     public Vector3 AgentVelocity()
     {
         return ai.desiredVelocity;
+    }
+
+    public void SetState(EnemyState newState)
+    {
+        ActiveState = newState;
     }
 
     private void FixedUpdate()
