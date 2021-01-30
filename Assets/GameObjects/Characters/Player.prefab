@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7415346655028188108}
   - component: {fileID: 7415346655028188109}
   - component: {fileID: 7415346655028188106}
+  - component: {fileID: 999078435531711934}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -73,7 +74,7 @@ Camera:
   m_GameObject: {fileID: 7415346655028188110}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.1262021, g: 0.045923818, b: 0.2264151, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &999078435531711934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415346655028188110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &7415346655467150293
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +177,7 @@ GameObject:
   - component: {fileID: 6437673561895427143}
   - component: {fileID: 1394525258059331479}
   - component: {fileID: 1278652917}
+  - component: {fileID: 7415346655144132289}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -274,6 +290,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityID: 0
+--- !u!114 &7415346655144132289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415346655467150293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88421fffded21d479452d35932aa0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  onlyPlayOwnSounds: 1
+  damageEvent: event:/damage
+  stunEvent: 
+  destroyEvent: 
+  usageEvent: []
+  pickupEvent:
+  - name: key
+    value: event:/keys
+  triggerEvents: []
 --- !u!1 &7415346656336734520
 GameObject:
   m_ObjectHideFlags: 0
