@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5737486211231787993}
   - component: {fileID: 5737486211231787995}
   - component: {fileID: 5737486211231787994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5737486211320604163}
   - component: {fileID: 5737486211320604162}
   - component: {fileID: 5737486211320604188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 5737486211375942355}
   - component: {fileID: 5737486211375942354}
   - component: {fileID: 5737486211375942316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 5737486212061440474}
   - component: {fileID: 5737486212061440473}
   - component: {fileID: 5737486212061440475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 5737486212981061804}
   - component: {fileID: 5737486212981061843}
   - component: {fileID: 5737486212981061805}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,9 +490,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5737486213290106856}
   - component: {fileID: 5737486213290106862}
-  m_Layer: 0
+  - component: {fileID: 1445804784}
+  - component: {fileID: 1445804782}
+  - component: {fileID: 1445804783}
+  m_Layer: 9
   m_Name: Cage
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,9 +534,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sheep: {fileID: 7684076162639592712}
   Door: {fileID: 5737486212981061842}
+  entity: {fileID: 0}
+  triggerID: cage
   OpenDoor: {fileID: 1819116676684815114, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
   ClosedDoor: {fileID: -8748604073257499604, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
   ActiveState: 0
+--- !u!65 &1445804784
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737486213290106861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1445804782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737486213290106861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46a2abc9248a234783daa16a84569ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  requiredItems:
+  - name: key
+    value: 1
+  damageInteractions: []
+  stunInteractions: []
+  pickupInteractions: []
+  destroyInteractions: []
+  triggerInteractions:
+  - interactionType: 2
+    targetType: 0
+    triggerName: cage
+--- !u!114 &1445804783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737486213290106861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974460f9afa2bf4688c9a8e4e2caccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityID: 0
 --- !u!1001 &8690994314712057439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,6 +643,10 @@ PrefabInstance:
     - target: {fileID: 1314998068151057239, guid: c5450f6206f9f8a4db1e685219c8003f, type: 3}
       propertyPath: m_Name
       value: FriendlySheep
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314998068757858746, guid: c5450f6206f9f8a4db1e685219c8003f, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5450f6206f9f8a4db1e685219c8003f, type: 3}

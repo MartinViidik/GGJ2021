@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteraction : InteractionHandler
 {
     public float bahRange = 10f;
+    public PlayerState playerState;
 
 
     private void OnCollisionEnter(Collision other)
@@ -13,7 +14,7 @@ public class PlayerInteraction : InteractionHandler
         {
             InteractableObject iObject = other.gameObject.GetComponent<InteractableObject>();
             if (iObject != null)
-                iObject.OnTouch(entity.entityID);
+                iObject.OnTouch(entity.entityID, playerState.inventory);
         }
     }
 
@@ -29,7 +30,7 @@ public class PlayerInteraction : InteractionHandler
                 {
                     InteractableObject iObject = c.gameObject.GetComponent<InteractableObject>();
                     if (iObject != null)
-                        iObject.OnBah(entity.entityID);
+                        iObject.OnBah(entity.entityID, playerState.inventory);
                 }
             }
         }

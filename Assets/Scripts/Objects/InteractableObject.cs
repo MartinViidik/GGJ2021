@@ -32,29 +32,51 @@ public class InteractableObject : MonoBehaviour
 
 
     public enum InteractionType { None, Touch, Action, Bah }
-    public enum TargetType { Self, Interactor }
+    public enum TargetType { Self, Interactor, Any }
 
+    public NamedInt[] requiredItems;
 
     public DamageInteraction[] damageInteractions;
     public StunInteraction[] stunInteractions;
     public PickupInteraction[] pickupInteractions;
     public DestroyInteraction[] destroyInteractions;
+    public TriggerInteraction[] triggerInteractions;
 
 
-    public virtual void OnTouch(int interactionID)
+    public virtual void OnTouch(int interactionID, Dictionary<string, Item> inventory)
     {
+        if (!CheckRequirements(inventory))
+            return;
+        Item.UseItems(interactionID, requiredItems);
+
         CheckBasics(interactionID, InteractionType.Touch);
     }
 
-    public virtual void OnAction(int interactionID)
+    public virtual void OnAction(int interactionID, Dictionary<string, Item> inventory)
     {
+        if (!CheckRequirements(inventory))
+            return;
+        Item.UseItems(interactionID, requiredItems);
+
         CheckBasics(interactionID, InteractionType.Action);
     }
 
-    public virtual void OnBah(int interactionID)
+    public virtual void OnBah(int interactionID, Dictionary<string, Item> inventory)
     {
+        if (!CheckRequirements(inventory))
+            return;
+        Item.UseItems(interactionID, requiredItems);
+
         CheckBasics(interactionID, InteractionType.Bah);
     }
+
+    bool CheckRequirements(Dictionary<string, Item> inventory)
+    {
+        if (!Item.ContainsAllItems(inventory, requiredItems))
+            return false;
+        return true;
+    }
+
 
     public void CheckBasics(int interactionID, InteractionType interactionType)
     {
@@ -62,7 +84,7 @@ public class InteractableObject : MonoBehaviour
         StunEntity(interactionID, interactionType);
         Pickup(interactionID, interactionType);
         DestroyCommand(interactionID, interactionType);
-
+        TriggerEvent(interactionID, interactionType);
     }
 
 
@@ -145,6 +167,29 @@ public class InteractableObject : MonoBehaviour
             }
         }
     }
+
+
+    void TriggerEvent(int interactionID, InteractionType interactionType)
+    {
+        foreach (TriggerInteraction i in triggerInteractions)
+        {
+            if (interactionType == i.interactionType)
+            {
+                switch (i.targetType)
+                {
+                    case TargetType.Interactor:
+                        GameEvents.current.Trigger(interactionID, i.triggerName);
+                        break;
+                    case TargetType.Self:
+                        GameEvents.current.Trigger(entity.entityID, i.triggerName);
+                        break;
+                    case TargetType.Any:
+                        GameEvents.current.Trigger(0, i.triggerName);
+                        break;
+                }
+            }
+        }
+    }
 }
 
 
@@ -179,4 +224,13 @@ public struct DestroyInteraction
 {
     public InteractableObject.InteractionType interactionType;
     public InteractableObject.TargetType targetType;
+}
+
+
+[Serializable]
+public struct TriggerInteraction
+{
+    public InteractableObject.InteractionType interactionType;
+    public InteractableObject.TargetType targetType;
+    public string triggerName;
 }

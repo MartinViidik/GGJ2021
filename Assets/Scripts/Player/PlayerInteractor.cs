@@ -7,6 +7,7 @@ public class PlayerInteractor : MonoBehaviour
     public Entity entity;
     public Transform interactorAnchor;
     public float interactionRange = 3f;
+    public PlayerState playerState;
 
 
     private void FixedUpdate()
@@ -29,7 +30,7 @@ public class PlayerInteractor : MonoBehaviour
                 {
                     InteractableObject iObject = c.gameObject.GetComponent<InteractableObject>();
                     if (iObject != null)
-                        iObject.OnAction(entity.entityID);
+                        iObject.OnAction(entity.entityID, playerState.inventory);
                 }
             }
         }

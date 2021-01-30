@@ -47,6 +47,14 @@ public class GameEvents : MonoBehaviour
     }
 
 
+    public event Action<int, NamedInt> onItemUsage;
+    public void ItemUsage(int interactableID, NamedInt item)
+    {
+        if (onItemUsage != null)
+            onItemUsage(interactableID, item);
+    }
+
+
     public event Action<int> onDestroyCommand;
     public void DestroyCommand(int interactableID)
     {
@@ -55,8 +63,16 @@ public class GameEvents : MonoBehaviour
     }
 
 
-    public event Action<Dictionary<string, SOItem>> onPlayerInventoryUpdate;
-    public void PlayerInventoryUpdate(Dictionary<string, SOItem> inventory)
+    public event Action<int, string> onTrigger;
+    public void Trigger(int interactableID, string triggerID)
+    {
+        if (onTrigger != null)
+            onTrigger(interactableID, triggerID);
+    }
+
+
+    public event Action<Dictionary<string, Item>> onPlayerInventoryUpdate;
+    public void PlayerInventoryUpdate(Dictionary<string, Item> inventory)
     {
         if (onPlayerInventoryUpdate != null)
             onPlayerInventoryUpdate(inventory);

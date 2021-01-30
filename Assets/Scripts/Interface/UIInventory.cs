@@ -20,14 +20,14 @@ public class UIInventory : MonoBehaviour
     }
 
     
-    void InventoryUpdate(Dictionary<string, SOItem> inventory)
+    void InventoryUpdate(Dictionary<string, Item> inventory)
     {
         for (int i = itemDisplays.Count - 1; i >= 0; i--)
             Destroy(itemDisplays[i].gameObject);
 
         itemDisplays.Clear();
 
-        foreach (SOItem item in inventory.Values)
+        foreach (Item item in inventory.Values)
         {
             UIItemDisplay temp = Instantiate(itemDisplayPrefab).GetComponent<UIItemDisplay>();
             temp.UpdateDisplay(item);

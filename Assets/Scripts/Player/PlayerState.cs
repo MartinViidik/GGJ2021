@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerState : StateHandler
 {
     public int maxHealth = 5;
-    public Dictionary<string, SOItem> inventory = new Dictionary<string, SOItem>();
+    public Dictionary<string, Item> inventory = new Dictionary<string, Item>();
 
     public float invincibleTime = 2f;
     float lastTimeDamageTake = float.MinValue;
@@ -27,6 +27,7 @@ public class PlayerState : StateHandler
     {
         GameEvents.current.onDealDamage += OnDamage;
         GameEvents.current.onPickup += OnPickup;
+        GameEvents.current.onItemUsage += OnItemUsage;
         Invoke("SetupPlayer", 0);
     }
 
@@ -34,6 +35,7 @@ public class PlayerState : StateHandler
     {
         GameEvents.current.onDealDamage -= OnDamage;
         GameEvents.current.onPickup -= OnPickup;
+        GameEvents.current.onItemUsage -= OnItemUsage;
     }
 
     void SetupPlayer()
@@ -64,12 +66,23 @@ public class PlayerState : StateHandler
         if (interactableID != entity.entityID)
             return;
 
-        if (inventory.ContainsKey(item.itemID))
+        if (inventory.ContainsKey(item.item.itemID))
         {
-            inventory[item.itemID].usages += item.usages;
+            inventory[item.item.itemID].usages += item.item.usages;
         } else
         {
-            inventory.Add(item.itemID, item);
+            inventory.Add(item.item.itemID, new Item(item.item));
+        }
+        GameEvents.current.PlayerInventoryUpdate(inventory);
+    }
+
+    void OnItemUsage(int interactableID, NamedInt item)
+    {
+        if(inventory.ContainsKey(item.name))
+        {
+            inventory[item.name].usages -= item.value;
+            if (inventory[item.name].usages == 0)
+                inventory.Remove(item.name);
         }
         GameEvents.current.PlayerInventoryUpdate(inventory);
     }

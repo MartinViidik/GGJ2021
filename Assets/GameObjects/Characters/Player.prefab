@@ -259,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   bahRange: 20
+  playerState: {fileID: 6437673561895427143}
 --- !u!114 &1278652917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,6 +424,7 @@ MonoBehaviour:
   entity: {fileID: 1278652917}
   interactorAnchor: {fileID: 6620794372682391171}
   interactionRange: 3
+  playerState: {fileID: 6437673561895427143}
 --- !u!33 &6720812379631798495
 MeshFilter:
   m_ObjectHideFlags: 0

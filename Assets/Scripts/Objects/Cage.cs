@@ -4,6 +4,9 @@ public class Cage : MonoBehaviour
 {
     public GameObject Sheep;
     public GameObject Door;
+    public Entity entity;
+    public string triggerID;
+    bool triggered = false;
 
     [SerializeField] Sprite OpenDoor;
     [SerializeField] Sprite ClosedDoor;
@@ -11,9 +14,32 @@ public class Cage : MonoBehaviour
     public enum DoorState { LOCKED, OPEN };
     public DoorState ActiveState;
 
+    private void Awake()
+    {
+        entity = GetComponent<Entity>();
+    }
+
     private void Start()
     {
         SetDoorState(ActiveState);
+        GameEvents.current.onTrigger += OnTrigger;
+    }
+
+
+    private void OnDestroy()
+    {
+        GameEvents.current.onTrigger -= OnTrigger;
+    }
+
+    void OnTrigger(int interactableID, string triggerID)
+    {
+        if (interactableID != 0 && interactableID != entity.entityID)
+            return;
+
+        if (triggered || triggerID != this.triggerID)
+            return;
+
+        SetDoorState(DoorState.OPEN);
     }
 
     public void SetDoorState(DoorState newState)

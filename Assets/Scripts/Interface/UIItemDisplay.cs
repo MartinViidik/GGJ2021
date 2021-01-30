@@ -10,7 +10,7 @@ public class UIItemDisplay : MonoBehaviour
     public Image icon;
     public TextMeshProUGUI text;
 
-    public void UpdateDisplay(SOItem item)
+    public void UpdateDisplay(Item item)
     {
         icon.sprite = item.sprite;
         text.text = (item.usages).ToString();

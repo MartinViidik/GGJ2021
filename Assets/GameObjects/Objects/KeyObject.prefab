@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2333806505124180081}
   - component: {fileID: 2333806505124180080}
   m_Layer: 9
-  m_Name: KeyObjects
+  m_Name: KeyObject
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,10 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  damageInteractions:
-  - interactionType: 2
-    targetType: 1
-    damageAmount: 1
+  requiredItems: []
+  damageInteractions: []
   stunInteractions: []
   pickupInteractions:
   - interactionType: 2
@@ -155,6 +153,7 @@ MonoBehaviour:
   destroyInteractions:
   - interactionType: 2
     targetType: 0
+  triggerInteractions: []
 --- !u!114 &2333806505124180081
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class EnemyInteraction : InteractionHandler
         {
             InteractableObject iObject = other.gameObject.GetComponent<InteractableObject>();
             if (iObject != null)
-                iObject.OnTouch(entity.entityID);
+                iObject.OnTouch(entity.entityID, null);
         }
     }
 }
