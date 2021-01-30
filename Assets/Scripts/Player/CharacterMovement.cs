@@ -25,12 +25,12 @@ public class CharacterMovement : MonoBehaviour
     void HandleInput()
     {
         movementDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 15f);
+        movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 1f);
     }
 
     void MoveCharacter()
     {
-        rb.velocity = (movementDirection * movementSpeed) * 5;
+        rb.velocity = (movementDirection * movementSpeed) * 8;
     }
 
     void Animate()
