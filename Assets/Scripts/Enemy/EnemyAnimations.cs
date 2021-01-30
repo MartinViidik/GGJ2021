@@ -8,13 +8,11 @@ public class EnemyAnimations : MonoBehaviour
     public Animator anim;
     private void Update()
     {
-        if (Enemy.AgentVelocity() != Vector3.zero)
+        if (Enemy.AgentVelocity() != Vector3.zero && Enemy.AgentVelocity().magnitude > 2)
         {
             anim.SetFloat("Horizontal", Enemy.AgentVelocity().x);
             anim.SetFloat("Vertical", Enemy.AgentVelocity().z);
-            anim.SetFloat("Speed", 1);
-        } else {
-            anim.SetFloat("Speed", 0);
         }
+        anim.SetFloat("Speed", Enemy.AgentVelocity().magnitude);
     }
 }
