@@ -34,6 +34,9 @@ public class InteractableObject : MonoBehaviour
     public enum InteractionType { None, Touch, Action, Bah }
     public enum TargetType { Self, Interactor, Any }
 
+    public bool onlyOneUsage = false;
+    bool objectUsed = false;
+
     public NamedInt[] requiredItems;
 
     public DamageInteraction[] damageInteractions;
@@ -72,6 +75,9 @@ public class InteractableObject : MonoBehaviour
 
     bool CheckRequirements(Dictionary<string, Item> inventory)
     {
+        if (onlyOneUsage && objectUsed)
+            return false;
+
         if (!Item.ContainsAllItems(inventory, requiredItems))
             return false;
         return true;

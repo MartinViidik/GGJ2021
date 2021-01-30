@@ -565,6 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  onlyOneUsage: 1
   requiredItems:
   - name: key
     value: 1
