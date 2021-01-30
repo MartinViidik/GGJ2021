@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         entity = GetComponent<Entity>();
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        GetPlayer();
     }
 
     void Start()
@@ -66,23 +66,21 @@ public class EnemyAI : MonoBehaviour
 
     private void OnStun(int interactableID, float stunPower)
     {
-        if (interactableID != entity.entityID || isStunned)
+        if (interactableID != entity.entityID || ActiveState == EnemyState.STUNNED)
             return;
+
         StartCoroutine("SetStunned", stunPower);
     }
 
 
     private IEnumerator SetStunned(float stunPower)
     {
-        Debug.Log(stunPower);
         ActiveState = EnemyState.STUNNED;
-        isStunned = true;
         ai.maxSpeed = 0;
-        Debug.Log("Entered stunned state");
         yield return new WaitForSeconds(stunPower);
-        isStunned = false;
         ActiveState = EnemyState.WANDER;
     }
+
     public Vector3 AgentVelocity()
     {
         return ai.desiredVelocity;
@@ -90,10 +88,6 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!playerRef)
-        {
-            GetPlayer();
-        }
         switch (ActiveState)
         {
             case EnemyState.WANDER:
@@ -125,10 +119,6 @@ public class EnemyAI : MonoBehaviour
                 break;
             case EnemyState.STUNNED:
                 {
-                    if (!isStunned)
-                    {
-                        StartCoroutine("SetStunned");
-                    }
                 }
                 break;
         }
