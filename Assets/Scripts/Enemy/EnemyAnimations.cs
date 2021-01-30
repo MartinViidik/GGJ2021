@@ -29,5 +29,6 @@ public class EnemyAnimations : MonoBehaviour
         {
             velocity = Vector3.zero;
         }
+        Debug.Log(velocity);
     }
 }
