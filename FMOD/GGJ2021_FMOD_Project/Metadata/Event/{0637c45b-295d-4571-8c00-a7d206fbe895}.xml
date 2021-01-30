@@ -92,6 +92,9 @@
 		<property name="length">
 			<value>0.38272916666666668</value>
 		</property>
+		<relationship name="fadeInCurve">
+			<destination>{a2714e63-5726-4f36-8d24-2e802ea407ff}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{10e45fec-fbd3-4ef3-b503-7c402f6b78d3}</destination>
 		</relationship>
@@ -117,6 +120,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{bb927015-b9b8-4f32-a128-44874252d92c}" />
 	<object class="MixerBusFader" id="{459edb08-ed8e-4613-aee9-e47c2a27dd66}" />
+	<object class="FadeCurve" id="{a2714e63-5726-4f36-8d24-2e802ea407ff}">
+		<relationship name="startPoint">
+			<destination>{201c875c-af8a-44cd-a142-61c1eb8d994f}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{5edfb9c1-4f84-439b-b39c-b16406caa79b}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{d9ee0580-fa8f-4edb-8630-56acee5de20e}">
 		<relationship name="effects">
 			<destination>{47c80a5f-12bc-40bc-949d-f6d5556a86c1}</destination>
@@ -126,6 +137,25 @@
 	</object>
 	<object class="MixerBusPanner" id="{97ede896-3614-45ab-869d-0c59f1792c88}" />
 	<object class="MixerBusFader" id="{c9f061ea-fb4f-4c5a-80fe-1fceca9e5215}" />
+	<object class="AutomationPoint" id="{201c875c-af8a-44cd-a142-61c1eb8d994f}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.2547189</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{5edfb9c1-4f84-439b-b39c-b16406caa79b}">
+		<property name="position">
+			<value>0.16400000000000001</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{47c80a5f-12bc-40bc-949d-f6d5556a86c1}" />
 	<object class="PitchShifterEffect" id="{5b078d70-69b1-4e2d-a87e-9a129b2b1b4c}">
 		<property name="pitch">
@@ -140,7 +170,7 @@
 	</object>
 	<object class="SFXReverbEffect" id="{1806ace3-47e7-4b57-9e22-71532572f73d}">
 		<property name="decayTime">
-			<value>1000</value>
+			<value>2000</value>
 		</property>
 		<property name="highCut">
 			<value>950</value>
