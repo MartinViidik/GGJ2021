@@ -37,8 +37,8 @@ public class CharacterMovement : MonoBehaviour
     {
         if(movementDirection != Vector3.zero)
         {
-            anim.SetFloat("Horizontal", movementDirection.normalized.x);
-            anim.SetFloat("Vertical", movementDirection.normalized.z);
+            anim.SetFloat("Horizontal", movementDirection.x);
+            anim.SetFloat("Vertical", movementDirection.z);
         }
         anim.SetFloat("Speed", movementSpeed);
     }
