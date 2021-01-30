@@ -26,20 +26,19 @@ public class CharacterMovement : MonoBehaviour
     {
         movementDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 15f);
-        Debug.Log(movementDirection);
     }
 
     void MoveCharacter()
     {
-        rb.velocity = movementDirection * movementSpeed;
+        rb.velocity = (movementDirection * movementSpeed) * 5;
     }
 
     void Animate()
     {
         if(movementDirection != Vector3.zero)
         {
-            anim.SetFloat("Horizontal", movementDirection.x);
-            anim.SetFloat("Vertical", movementDirection.z);
+            anim.SetFloat("Horizontal", movementDirection.normalized.x);
+            anim.SetFloat("Vertical", movementDirection.normalized.z);
         }
         anim.SetFloat("Speed", movementSpeed);
     }
