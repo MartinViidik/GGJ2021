@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class SoundPlayer : MonoBehaviour
 {
-    Entity entity;
+
+    public Entity entity;
     public bool onlyPlayOwnSounds;
+
+    [FMODUnity.EventRef]
     public string damageEvent;
+    float lastTimeDamage = float.MinValue;
+    float timeBetweenDamage = 2f;
+
+    [FMODUnity.EventRef]
     public string stunEvent;
+
+    [FMODUnity.EventRef]
     public string destroyEvent;
-    public string[] usageEvent;
-    public string[] pickupEvent;
-    public string[] triggerEvents;
+
+    public NamedFmodSound[] usageEvent;
+    public NamedFmodSound[] pickupEvent;
+    public NamedFmodSound[] triggerEvents;
 
     private void Awake()
     {
@@ -42,8 +52,14 @@ public class SoundPlayer : MonoBehaviour
 
     void OnDamage(int interactableID, int damageDealt)
     {
+        if (lastTimeDamage + timeBetweenDamage > Time.time)
+            return;
+
         if (onlyPlayOwnSounds && (entity == null || interactableID != entity.entityID))
             return;
+
+        lastTimeDamage = Time.time;
+
         FMODUnity.RuntimeManager.PlayOneShot(damageEvent, transform.position);
     }
 
@@ -74,10 +90,10 @@ public class SoundPlayer : MonoBehaviour
         if (usageEvent == null || usageEvent.Length <= 0)
             return;
 
-        foreach (string s in usageEvent)
+        foreach (NamedFmodSound s in usageEvent)
         {
-            if (s == "" || s == item.name)
-                FMODUnity.RuntimeManager.PlayOneShot(s, transform.position);
+            if (s.name == "" || s.name == item.name)
+                FMODUnity.RuntimeManager.PlayOneShot(s.value, transform.position);
         }
 
     }
@@ -90,10 +106,10 @@ public class SoundPlayer : MonoBehaviour
         if (pickupEvent == null || pickupEvent.Length <= 0)
             return;
 
-        foreach (string s in pickupEvent)
+        foreach (NamedFmodSound s in pickupEvent)
         {
-            if (s == "" || s == item.item.itemID)
-                FMODUnity.RuntimeManager.PlayOneShot(s, transform.position);
+            if (s.name == "" || s.name == item.item.itemID)
+                FMODUnity.RuntimeManager.PlayOneShot(s.value, transform.position);
         }
 
     }
@@ -106,10 +122,10 @@ public class SoundPlayer : MonoBehaviour
         if (triggerEvents == null || triggerEvents.Length <= 0)
             return;
 
-        foreach (string s in triggerEvents)
+        foreach (NamedFmodSound s in triggerEvents)
         {
-            if (s == "" || s == triggerName)
-                FMODUnity.RuntimeManager.PlayOneShot(s, transform.position);
+            if (s.name == "" || s.name == triggerName)
+                FMODUnity.RuntimeManager.PlayOneShot(s.value, transform.position);
         }
 
     }

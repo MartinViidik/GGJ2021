@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 1445804784}
   - component: {fileID: 1445804782}
   - component: {fileID: 1445804783}
+  - component: {fileID: 1953086413}
   m_Layer: 9
   m_Name: Cage
   m_TagString: Object
@@ -590,6 +591,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityID: 0
+--- !u!114 &1953086413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737486213290106861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88421fffded21d479452d35932aa0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  onlyPlayOwnSounds: 1
+  damageEvent: 
+  stunEvent: 
+  destroyEvent: 
+  usageEvent: []
+  pickupEvent: []
+  triggerEvents:
+  - name: cage
+    value: event:/cage
 --- !u!1001 &8690994314712057439
 PrefabInstance:
   m_ObjectHideFlags: 0
