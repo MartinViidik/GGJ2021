@@ -10,9 +10,12 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 movementDirection;
     private Rigidbody rb;
 
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GameEvents.current.onPlayerHealthUpdate += onPlayerHealthUpdate;
+        GameEvents.current.onPickup += onPickup;
+        GameEvents.current.onItemUsage += onItemUsage;
     }
 
     private void Update()
@@ -20,6 +23,13 @@ public class CharacterMovement : MonoBehaviour
         HandleInput();
         MoveCharacter();
         Animate();
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.current.onPlayerHealthUpdate -= onPlayerHealthUpdate;
+        GameEvents.current.onPickup -= onPickup;
+        GameEvents.current.onItemUsage -= onItemUsage;
     }
 
     void HandleInput()
@@ -41,5 +51,31 @@ public class CharacterMovement : MonoBehaviour
             anim.SetFloat("Vertical", movementDirection.z);
         }
         anim.SetFloat("Speed", movementSpeed);
+    }
+
+    void onPlayerHealthUpdate(int health)
+    {
+        Debug.Log("ouch");
+    }
+
+    public void onPickup(int interactableID, SOItem item)
+    {
+        PlayPickupAnimation();
+    }
+
+    public void onItemUsage(int interactableID, NamedInt item){
+        PlayPickupAnimation();
+    }
+
+    void PlayPickupAnimation()
+    {
+        if (sprite.flipX == true)
+        {
+            anim.Play("Pickup");
+        }
+        else
+        {
+            anim.Play("PickupLeft");
+        }
     }
 }
