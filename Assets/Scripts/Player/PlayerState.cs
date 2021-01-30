@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerState : StateHandler
 {
     public int maxHealth = 5;
-    public Dictionary<string, int> inventory = new Dictionary<string, int>();
+    public Dictionary<string, SOItem> inventory = new Dictionary<string, SOItem>();
 
     public float invincibleTime = 2f;
     float lastTimeDamageTake = float.MinValue;
@@ -26,12 +26,14 @@ public class PlayerState : StateHandler
     private void Start()
     {
         GameEvents.current.onDealDamage += OnDamage;
+        GameEvents.current.onPickup += OnPickup;
         Invoke("SetupPlayer", 0);
     }
 
     private void OnDestroy()
     {
         GameEvents.current.onDealDamage -= OnDamage;
+        GameEvents.current.onPickup -= OnPickup;
     }
 
     void SetupPlayer()
@@ -54,5 +56,21 @@ public class PlayerState : StateHandler
 
         lastTimeDamageTake = Time.time;
         CurrentHealth -= damageDealt;
+    }
+
+
+    void OnPickup(int interactableID, SOItem item)
+    {
+        if (interactableID != entity.entityID)
+            return;
+
+        if (inventory.ContainsKey(item.itemID))
+        {
+            inventory[item.itemID].usages += item.usages;
+        } else
+        {
+            inventory.Add(item.itemID, item);
+        }
+        GameEvents.current.PlayerInventoryUpdate(inventory);
     }
 }

@@ -11,6 +11,25 @@ public class InteractableObject : MonoBehaviour
         entity = GetComponent<Entity>();
     }
 
+    private void Start()
+    {
+        GameEvents.current.onDestroyCommand += SelfDestroy;
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.current.onDestroyCommand -= SelfDestroy;
+    }
+
+    private void SelfDestroy(int interactableID)
+    {
+        if (interactableID != entity.entityID)
+            return;
+
+        Destroy(gameObject);
+    }
+
+
 
     public enum InteractionType { None, Touch, Action, Bah }
     public enum TargetType { Self, Interactor }
@@ -18,6 +37,8 @@ public class InteractableObject : MonoBehaviour
 
     public DamageInteraction[] damageInteractions;
     public StunInteraction[] stunInteractions;
+    public PickupInteraction[] pickupInteractions;
+    public DestroyInteraction[] destroyInteractions;
 
 
     public virtual void OnTouch(int interactionID)
@@ -39,6 +60,9 @@ public class InteractableObject : MonoBehaviour
     {
         DealDamage(interactionID, interactionType);
         StunEntity(interactionID, interactionType);
+        Pickup(interactionID, interactionType);
+        DestroyCommand(interactionID, interactionType);
+
     }
 
 
@@ -81,6 +105,46 @@ public class InteractableObject : MonoBehaviour
             }
         }
     }
+
+
+    void Pickup(int interactionID, InteractionType interactionType)
+    {
+        foreach (PickupInteraction i in pickupInteractions)
+        {
+            if (interactionType == i.interactionType)
+            {
+                switch (i.targetType)
+                {
+                    case TargetType.Interactor:
+                        GameEvents.current.Pickup(interactionID, i.item);
+                        break;
+                    case TargetType.Self:
+                        GameEvents.current.Pickup(entity.entityID, i.item);
+                        break;
+                }
+            }
+        }
+    }
+
+
+    void DestroyCommand(int interactionID, InteractionType interactionType)
+    {
+        foreach (DestroyInteraction i in destroyInteractions)
+        {
+            if (interactionType == i.interactionType)
+            {
+                switch (i.targetType)
+                {
+                    case TargetType.Interactor:
+                        GameEvents.current.DestroyCommand(interactionID);
+                        break;
+                    case TargetType.Self:
+                        GameEvents.current.DestroyCommand(entity.entityID);
+                        break;
+                }
+            }
+        }
+    }
 }
 
 
@@ -98,4 +162,21 @@ public struct StunInteraction
     public InteractableObject.InteractionType interactionType;
     public InteractableObject.TargetType targetType;
     public float stunPower;
+}
+
+
+[Serializable]
+public struct PickupInteraction
+{
+    public InteractableObject.InteractionType interactionType;
+    public InteractableObject.TargetType targetType;
+    public SOItem item;
+}
+
+
+[Serializable]
+public struct DestroyInteraction
+{
+    public InteractableObject.InteractionType interactionType;
+    public InteractableObject.TargetType targetType;
 }
