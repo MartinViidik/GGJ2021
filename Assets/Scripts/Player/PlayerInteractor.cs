@@ -25,7 +25,6 @@ public class PlayerInteractor : MonoBehaviour
             Collider[] colliderList = Physics.OverlapSphere(transform.position, interactionRange, LayerMask.GetMask("Interactable"));
             foreach (Collider c in colliderList)
             {
-                Debug.Log(c);
                 if (c.tag == "Enemy" || c.tag == "Object")
                 {
                     InteractableObject iObject = c.gameObject.GetComponent<InteractableObject>();

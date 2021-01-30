@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RandomRotation : MonoBehaviour
 {
+    public Vector3 minStart;
+    public Vector3 maxStart;
     public Vector3 minSpeed;
     public Vector3 maxSpeed;
     Vector3 speed;
-    public Vector3 minStart;
-    public Vector3 maxStart;
 
     // Start is called before the first frame update
     void Start()
