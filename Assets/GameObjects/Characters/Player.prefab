@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443312448ea1cd644875610a345d72f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity: {fileID: 0}
+  entity: {fileID: 1278652917}
   interactorAnchor: {fileID: 6620794372682391171}
   interactionRange: 3
 --- !u!33 &6720812379631798495
