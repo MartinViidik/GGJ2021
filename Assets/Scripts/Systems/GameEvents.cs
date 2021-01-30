@@ -28,4 +28,11 @@ public class GameEvents : MonoBehaviour
         if (onDealDamage != null)
             onDealDamage(interactableID, damageAmount);
     }
+
+    public event Action<int, float> onStunEntity;
+    public void StunEntity(int interactableID, float stunPower)
+    {
+        if (onStunEntity != null)
+            onStunEntity(interactableID, stunPower);
+    }
 }

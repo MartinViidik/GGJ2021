@@ -4,6 +4,8 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
+    Entity entity;
+
     public enum EnemyState { WANDER, CHASE, ATTACK, STUNNED };
     public EnemyState ActiveState = EnemyState.WANDER;
     public IAstarAI ai;
@@ -15,12 +17,24 @@ public class EnemyAI : MonoBehaviour
     public bool ReachedDestination;
     bool isStunned;
 
+    private void Awake()
+    {
+        entity = GetComponent<Entity>();
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void Start()
     {
         GetPlayer();
         ai = GetComponent<IAstarAI>();
         stats = GetComponent<EnemyStats>();
         startPosition = transform;
+        GameEvents.current.onStunEntity += OnStun;
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.current.onStunEntity -= OnStun;
     }
 
     Vector3 GetPositionAroundObject(Transform tx)
@@ -48,15 +62,26 @@ public class EnemyAI : MonoBehaviour
         ai.SearchPath();
         ReachedDestination = false;
     }
-    private IEnumerator SetStunned()
+
+
+    private void OnStun(int interactableID, float stunPower)
     {
+        if (interactableID != entity.entityID || isStunned)
+            return;
+        StartCoroutine("SetStunned", stunPower);
+    }
+
+
+    private IEnumerator SetStunned(float stunPower)
+    {
+        Debug.Log(stunPower);
+        ActiveState = EnemyState.STUNNED;
         isStunned = true;
         ai.maxSpeed = 0;
         Debug.Log("Entered stunned state");
-        yield return new WaitForSeconds(stats.StunTimer);
+        yield return new WaitForSeconds(stunPower);
         isStunned = false;
         ActiveState = EnemyState.WANDER;
-
     }
     public Vector3 AgentVelocity()
     {
@@ -65,10 +90,6 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetKeyDown("space"))
-        {
-            ActiveState = EnemyState.STUNNED;
-        }
         if (!playerRef)
         {
             GetPlayer();

@@ -41,11 +41,6 @@ public class PlayerState : StateHandler
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            CurrentHealth -= 1;
-
-        if (Input.GetKeyDown(KeyCode.E))
-            CurrentHealth += 1;
     }
 
 
