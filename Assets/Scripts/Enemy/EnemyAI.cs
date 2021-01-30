@@ -4,26 +4,27 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float radius = 5;
     public enum EnemyState { WANDER, CHASE, ATTACK };
     public EnemyState ActiveState = EnemyState.WANDER;
     public IAstarAI ai;
 
     public GameObject playerRef;
     private Transform startPosition;
+    private EnemyStats stats;
 
-    private bool ReachedDestination;
+    public bool ReachedDestination;
 
     void Start()
     {
         GetPlayer();
         ai = GetComponent<IAstarAI>();
+        stats = GetComponent<EnemyStats>();
         startPosition = transform;
     }
 
     Vector3 GetPositionAroundObject(Transform tx)
     {
-        Vector3 offset = Random.insideUnitCircle * radius;
+        Vector3 offset = Random.insideUnitCircle * stats.WanderRadius;
         Vector3 pos = tx.position + offset;
         return pos;
     }
@@ -47,9 +48,14 @@ public class EnemyAI : MonoBehaviour
         ai.SearchPath();
         ReachedDestination = false;
     }
+    public Vector3 AgentVelocity()
+    {
+        return ai.desiredVelocity;
+    }
 
     private void FixedUpdate()
     {
+        Debug.Log(AgentVelocity());
         if (!playerRef)
         {
             GetPlayer();
@@ -58,6 +64,8 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyState.WANDER:
                 {
+                    if (ai.maxSpeed != stats.WanderSpeed)
+                        ai.maxSpeed = stats.WanderSpeed;
                     //Debug.Log("Entered wander state");
                     if (!ai.pathPending && (ai.reachedEndOfPath || !ai.hasPath))
                     {
@@ -66,7 +74,7 @@ public class EnemyAI : MonoBehaviour
                             StartCoroutine("GetNewPosition");
                         }
                     }
-                    if (PlayerDistance() < 20)
+                    if (PlayerDistance() < stats.SightDistance)
                     {
                         ActiveState = EnemyState.CHASE;
                     }
@@ -75,6 +83,8 @@ public class EnemyAI : MonoBehaviour
 
             case EnemyState.CHASE:
                 {
+                    if (ai.maxSpeed != stats.ChaseSpeed)
+                        ai.maxSpeed = stats.ChaseSpeed;
                     ai.destination = playerRef.transform.position;
                     //Debug.Log("Entered chase state");
                 }

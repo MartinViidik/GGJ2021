@@ -4,31 +4,17 @@ using UnityEngine;
 
 public class EnemyAnimations : MonoBehaviour
 {
-    private Rigidbody rb;
-
-    private Vector3 previousPosition;
-    private Vector3 velocity;
-
-    public Vector3 CurrentMovementDirection
-    {
-        get
-        {
-            return velocity.normalized;
-        }
-    }
-
+    public EnemyAI Enemy;
+    public Animator anim;
     private void Update()
     {
-        if (previousPosition != transform.position)
+        if (Enemy.AgentVelocity() != Vector3.zero)
         {
-            velocity = previousPosition - transform.position;
-            previousPosition = transform.position;
-            Debug.Log(previousPosition);
+            anim.SetFloat("Horizontal", Enemy.AgentVelocity().x);
+            anim.SetFloat("Vertical", Enemy.AgentVelocity().z);
+            anim.SetFloat("Speed", 1);
+        } else {
+            anim.SetFloat("Speed", 0);
         }
-        else
-        {
-            velocity = Vector3.zero;
-        }
-        Debug.Log(velocity);
     }
 }

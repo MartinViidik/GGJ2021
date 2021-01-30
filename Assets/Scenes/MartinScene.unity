@@ -455,6 +455,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1252041364 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8478066687563594966, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
+  m_PrefabInstance: {fileID: 518224125}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1543892538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8478066686561881654, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
@@ -472,6 +477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40741c77d3223874e82b0c38fcafc269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 1543892545}
+  anim: {fileID: 1252041364}
 --- !u!114 &1543892545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,9 +491,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ee40762e2c05e43aa5b59712d39150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
   ActiveState: 0
   playerRef: {fileID: 0}
+  ReachedDestination: 0
+--- !u!114 &1543892546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543892538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97094b31079d92429e375bf7bd7da45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WanderRadius: 10
+  SightDistance: 20
+  WanderSpeed: 4
+  ChaseSpeed: 5
 --- !u!1 &2069107238
 GameObject:
   m_ObjectHideFlags: 0
