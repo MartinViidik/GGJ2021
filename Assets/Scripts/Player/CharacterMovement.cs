@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -9,20 +11,24 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector3 movementDirection;
     private Rigidbody rb;
+    private bool CanMove = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         GameEvents.current.onPlayerHealthUpdate += onPlayerHealthUpdate;
         GameEvents.current.onPickup += onPickup;
-        GameEvents.current.onItemUsage += onItemUsage;
+        GameEvents.current.onStunEntity += StunEntity;
     }
 
     private void Update()
     {
-        HandleInput();
-        MoveCharacter();
-        Animate();
+        if (CanMove)
+        {
+            HandleInput();
+            MoveCharacter();
+            Animate();
+        }
     }
 
     private void OnDestroy()
@@ -30,6 +36,20 @@ public class CharacterMovement : MonoBehaviour
         GameEvents.current.onPlayerHealthUpdate -= onPlayerHealthUpdate;
         GameEvents.current.onPickup -= onPickup;
         GameEvents.current.onItemUsage -= onItemUsage;
+        GameEvents.current.onStunEntity -= StunEntity;
+    }
+
+    private void StunEntity(int arg1, float arg2)
+    {
+        if (sprite.flipX == true)
+        {
+            anim.Play("Baa");
+        }
+        else
+        {
+            anim.Play("BaaLeft");
+        }
+        StartCoroutine("DisableInput", 0.75f);
     }
 
     void HandleInput()
@@ -60,15 +80,6 @@ public class CharacterMovement : MonoBehaviour
 
     public void onPickup(int interactableID, SOItem item)
     {
-        PlayPickupAnimation();
-    }
-
-    public void onItemUsage(int interactableID, NamedInt item){
-        PlayPickupAnimation();
-    }
-
-    void PlayPickupAnimation()
-    {
         if (sprite.flipX == true)
         {
             anim.Play("Pickup");
@@ -77,5 +88,29 @@ public class CharacterMovement : MonoBehaviour
         {
             anim.Play("PickupLeft");
         }
+    }
+
+    public void onItemUsage(int interactableID, NamedInt item){
+        if (sprite.flipX == true)
+        {
+            anim.Play("Pickup");
+        }
+        else
+        {
+            anim.Play("PickupLeft");
+        }
+    }
+
+    public void onStunEntity(int interactableID, float stunPower)
+    {
+        Debug.Log("test");
+    }
+
+    private IEnumerator DisableInput(float length)
+    {
+        CanMove = false;
+        rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(length);
+        CanMove = true;
     }
 }
