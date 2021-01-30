@@ -1,0 +1,756 @@
+fileFormatVersion: 2
+guid: e36ea1d3ed74d44489eea58c2dbe0777
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1978606941413860304
+    second: Sheep_idle_Animation_0
+  - first:
+      213: 8281279124864014771
+    second: Sheep_idle_Animation_1
+  - first:
+      213: 2822344338470898733
+    second: Sheep_idle_Animation_2
+  - first:
+      213: 2384284255756364042
+    second: Sheep_idle_Animation_3
+  - first:
+      213: -5104765313841436153
+    second: Sheep_idle_Animation_4
+  - first:
+      213: 6210097412107602718
+    second: Sheep_idle_Animation_5
+  - first:
+      213: -9141073570591384278
+    second: Sheep_idle_Animation_6
+  - first:
+      213: -5369412351686174243
+    second: Sheep_idle_Animation_7
+  - first:
+      213: 3168166300191539089
+    second: Sheep_idle_Animation_8
+  - first:
+      213: 2203828672607093746
+    second: Sheep_idle_Animation_9
+  - first:
+      213: 5831453714868860131
+    second: Sheep_idle_Animation_10
+  - first:
+      213: -2543784434785500664
+    second: Sheep_idle_Animation_11
+  - first:
+      213: 1973528328819116572
+    second: Sheep_idle_Animation_12
+  - first:
+      213: 8538397993407992431
+    second: Sheep_idle_Animation_13
+  - first:
+      213: 3304064805656289189
+    second: Sheep_idle_Animation_14
+  - first:
+      213: 8371988460317463646
+    second: Sheep_idle_Animation_15
+  - first:
+      213: 957054940054174878
+    second: Sheep_idle_Animation_16
+  - first:
+      213: -213532684877831509
+    second: Sheep_idle_Animation_17
+  - first:
+      213: -4912986704518539685
+    second: Sheep_idle_Animation_18
+  - first:
+      213: -1902069277307467741
+    second: Sheep_idle_Animation_19
+  - first:
+      213: 6341469689523762239
+    second: Sheep_idle_Animation_20
+  - first:
+      213: 6695471963386689927
+    second: Sheep_idle_Animation_21
+  - first:
+      213: 2658372317269752514
+    second: Sheep_idle_Animation_22
+  - first:
+      213: 376354313632359159
+    second: Sheep_idle_Animation_23
+  - first:
+      213: -1922713816838436892
+    second: Sheep_idle_Animation_24
+  - first:
+      213: 1015118069250547190
+    second: Sheep_idle_Animation_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c97ea48739a84e0800000000000000
+      internalID: -1978606941413860304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9906bec730de270800000000000000
+      internalID: 8281279124864014771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 28
+        width: 455
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c8460f83bfa2720800000000000000
+      internalID: 2822344338470898733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 28
+        width: 457
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a092aebe5eda61120800000000000000
+      internalID: 2384284255756364042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70aeeb64efa3829b0800000000000000
+      internalID: -5104765313841436153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 2459
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b0f3d91b2be2650800000000000000
+      internalID: 6210097412107602718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 2943
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d503fd402642180800000000000000
+      internalID: -9141073570591384278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9962d1ae30c75b0800000000000000
+      internalID: -5369412351686174243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_8
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 28
+        width: 455
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fb740e67697fb20800000000000000
+      internalID: 3168166300191539089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_9
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 28
+        width: 455
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f301985082959e10800000000000000
+      internalID: 2203828672607093746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 28
+        width: 455
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4f3eed14c7de050800000000000000
+      internalID: 5831453714868860131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 5358
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802417bb889a2bcd0800000000000000
+      internalID: -2543784434785500664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 5842
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a0f611f81636b10800000000000000
+      internalID: 1973528328819116572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_13
+      rect:
+        serializedVersion: 2
+        x: 6333
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62ddf39cbb7e7670800000000000000
+      internalID: 8538397993407992431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_14
+      rect:
+        serializedVersion: 2
+        x: 6823
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af53006f656add20800000000000000
+      internalID: 3304064805656289189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_15
+      rect:
+        serializedVersion: 2
+        x: 7314
+        y: 28
+        width: 455
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5454e0e5274f2470800000000000000
+      internalID: 8371988460317463646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_16
+      rect:
+        serializedVersion: 2
+        x: 7796
+        y: 28
+        width: 457
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c3674b564284d00800000000000000
+      internalID: 957054940054174878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_17
+      rect:
+        serializedVersion: 2
+        x: 8279
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2ebe98721690df0800000000000000
+      internalID: -213532684877831509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_18
+      rect:
+        serializedVersion: 2
+        x: 8770
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5694f25f9091dbb0800000000000000
+      internalID: -4912986704518539685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_19
+      rect:
+        serializedVersion: 2
+        x: 9261
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32887e3e11e7a95e0800000000000000
+      internalID: -1902069277307467741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_20
+      rect:
+        serializedVersion: 2
+        x: 9752
+        y: 28
+        width: 455
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3478f5851d610850800000000000000
+      internalID: 6341469689523762239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_21
+      rect:
+        serializedVersion: 2
+        x: 10249
+        y: 28
+        width: 455
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789304dc6481bec50800000000000000
+      internalID: 6695471963386689927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_22
+      rect:
+        serializedVersion: 2
+        x: 10740
+        y: 28
+        width: 455
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca7893b98f64e420800000000000000
+      internalID: 2658372317269752514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_23
+      rect:
+        serializedVersion: 2
+        x: 11230
+        y: 28
+        width: 455
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f22eb51144193500800000000000000
+      internalID: 376354313632359159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_24
+      rect:
+        serializedVersion: 2
+        x: 11721
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e70c9678f52155e0800000000000000
+      internalID: -1922713816838436892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_idle_Animation_25
+      rect:
+        serializedVersion: 2
+        x: 12231
+        y: 28
+        width: 455
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd52c2718c661e00800000000000000
+      internalID: 1015118069250547190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
