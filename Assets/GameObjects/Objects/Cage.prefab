@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737486211231787992}
   m_LocalRotation: {x: 0.68934774, y: 0, z: 0, w: 0.7244307}
-  m_LocalPosition: {x: -0.09, y: 2.6769416, z: 0.63}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: 0.01, y: 2.48, z: 0.63}
+  m_LocalScale: {x: 0.625, y: 0.625, z: 0.625}
   m_Children: []
   m_Father: {fileID: 5737486213290106856}
   m_RootOrder: 5
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -635517193390612517, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
+  m_Sprite: {fileID: -635517193390612517, guid: 863707d3d9e5cf94587ecf2e9fe89105, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737486211320604163}
   - component: {fileID: 5737486211320604162}
-  - component: {fileID: 5737486211320604188}
+  - component: {fileID: 1660545655}
   m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
@@ -121,13 +121,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737486211320604161}
-  m_LocalRotation: {x: -0, y: -0.024807598, z: -0, w: 0.99969226}
-  m_LocalPosition: {x: -0.09, y: 0, z: 3.51}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09, y: 0, z: 3.167}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 4}
   m_Children: []
   m_Father: {fileID: 5737486213290106856}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -2.843, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5737486211320604162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -635517193390612517, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
+  m_Sprite: {fileID: -635517193390612517, guid: 863707d3d9e5cf94587ecf2e9fe89105, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &5737486211320604188
+--- !u!65 &1660545655
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,8 +190,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3276975, y: 1.63, z: 0.35870084}
-  m_Center: {x: -0.03316325, y: 0.101587474, z: -0.12934925}
+  m_Size: {x: 8.023652, y: 8.299999, z: 0.11384067}
+  m_Center: {x: 0, y: 0, z: -0.04307966}
 --- !u!1 &5737486211375942353
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737486211375942355}
   - component: {fileID: 5737486211375942354}
-  - component: {fileID: 5737486211375942316}
+  - component: {fileID: 1283810993}
   m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
@@ -218,8 +218,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737486211375942353}
   m_LocalRotation: {x: -0, y: -0.71914744, z: -0, w: 0.6948576}
-  m_LocalPosition: {x: -2.77, y: 0, z: 0.7}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: -2.57, y: -0.05, z: 0.71}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_Children: []
   m_Father: {fileID: 5737486213290106856}
   m_RootOrder: 0
@@ -264,7 +264,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -635517193390612517, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
+  m_Sprite: {fileID: -635517193390612517, guid: 863707d3d9e5cf94587ecf2e9fe89105, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -275,7 +275,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &5737486211375942316
+--- !u!65 &1283810993
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,8 +286,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4000005, y: 1.63, z: 0.1576843}
-  m_Center: {x: 0.0029876828, y: 0.101587474, z: -0.028841559}
+  m_Size: {x: 8.023655, y: 8.299999, z: 0.20000009}
+  m_Center: {x: -0.0000038146973, y: 0, z: 0.0000009536743}
 --- !u!1 &5737486212061440472
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737486212061440474}
   - component: {fileID: 5737486212061440473}
-  - component: {fileID: 5737486212061440475}
+  - component: {fileID: 443796888}
   m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
@@ -314,8 +314,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737486212061440472}
   m_LocalRotation: {x: -0, y: -0.71914744, z: -0, w: 0.6948576}
-  m_LocalPosition: {x: 2.55, y: 0, z: 0.87}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: 2.55, y: -0.04, z: 0.714}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 4}
   m_Children: []
   m_Father: {fileID: 5737486213290106856}
   m_RootOrder: 1
@@ -360,7 +360,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -635517193390612517, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
+  m_Sprite: {fileID: -635517193390612517, guid: 863707d3d9e5cf94587ecf2e9fe89105, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -371,7 +371,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &5737486212061440475
+--- !u!65 &443796888
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -382,8 +382,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4000005, y: 1.63, z: 0.117316574}
-  m_Center: {x: 0.0029876828, y: 0.101587474, z: 0.008658223}
+  m_Size: {x: 8.023655, y: 8.299999, z: 0.10432751}
+  m_Center: {x: -9.251412e-10, y: 0, z: 0.04783652}
 --- !u!1 &5737486212981061842
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737486212981061804}
   - component: {fileID: 5737486212981061843}
-  - component: {fileID: 5737486212981061805}
+  - component: {fileID: 2094958555}
   m_Layer: 9
   m_Name: DoorSprite
   m_TagString: Untagged
@@ -410,8 +410,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737486212981061842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: -1.71}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: 0.126, y: -0.06, z: -1.853}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_Children: []
   m_Father: {fileID: 5737486213290106856}
   m_RootOrder: 3
@@ -456,7 +456,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8748604073257499604, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
+  m_Sprite: {fileID: -8748604073257499604, guid: 863707d3d9e5cf94587ecf2e9fe89105, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -467,7 +467,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &5737486212981061805
+--- !u!65 &2094958555
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -478,8 +478,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 1.63, z: 0.15453056}
-  m_Center: {x: -0.041830122, y: 0.0746966, z: 0.027265295}
+  m_Size: {x: 8.043661, y: 8.33, z: 0.2}
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
 --- !u!1 &5737486213290106861
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,8 +536,8 @@ MonoBehaviour:
   Door: {fileID: 5737486212981061842}
   entity: {fileID: 0}
   triggerID: cage
-  OpenDoor: {fileID: 1819116676684815114, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
-  ClosedDoor: {fileID: -8748604073257499604, guid: 6aaaa3d61e9e6d6449c8d995dcb32458, type: 3}
+  OpenDoor: {fileID: 1819116676684815114, guid: 863707d3d9e5cf94587ecf2e9fe89105, type: 3}
+  ClosedDoor: {fileID: -8748604073257499604, guid: 863707d3d9e5cf94587ecf2e9fe89105, type: 3}
   ActiveState: 0
 --- !u!65 &1445804784
 BoxCollider:

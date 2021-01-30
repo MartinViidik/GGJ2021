@@ -16,6 +16,7 @@ public class CharacterMovement : MonoBehaviour
         GameEvents.current.onPlayerHealthUpdate += onPlayerHealthUpdate;
         GameEvents.current.onPickup += onPickup;
         GameEvents.current.onItemUsage += onItemUsage;
+        GameEvents.current.onDealDamage += onDealDamage;
     }
 
     private void Update()
@@ -55,7 +56,7 @@ public class CharacterMovement : MonoBehaviour
 
     void onPlayerHealthUpdate(int health)
     {
-        Debug.Log("ouch");
+        Debug.Log(health);
     }
 
     public void onPickup(int interactableID, SOItem item)
@@ -76,6 +77,14 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             anim.Play("PickupLeft");
+        }
+    }
+
+    public void onDealDamage(int interactableID, int damageAmount)
+    {
+        if(damageAmount > 0)
+        {
+            anim.Play("Damage");
         }
     }
 }

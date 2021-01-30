@@ -77,4 +77,12 @@ public class GameEvents : MonoBehaviour
         if (onPlayerInventoryUpdate != null)
             onPlayerInventoryUpdate(inventory);
     }
+
+    public event Action<int> onSheepRescued;
+
+    public void SheepRescued(int rescuedSheep)
+    {
+        if (onSheepRescued != null)
+            onSheepRescued(rescuedSheep);
+    }
 }
