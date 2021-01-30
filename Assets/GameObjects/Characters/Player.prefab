@@ -245,6 +245,7 @@ MonoBehaviour:
   entity: {fileID: 0}
   maxHealth: 5
   invincibleTime: 2
+  anim: {fileID: 7415346656336734517}
 --- !u!114 &1394525258059331479
 MonoBehaviour:
   m_ObjectHideFlags: 0

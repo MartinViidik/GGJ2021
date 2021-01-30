@@ -8,7 +8,7 @@ public class PlayerInteraction : InteractionHandler
     public PlayerState playerState;
 
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Object")
         {

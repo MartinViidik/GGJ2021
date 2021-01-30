@@ -9,6 +9,7 @@ public class PlayerState : StateHandler
 
     public float invincibleTime = 2f;
     float lastTimeDamageTake = float.MinValue;
+    public Animator anim;
 
     int currentHealth;
 
@@ -58,6 +59,7 @@ public class PlayerState : StateHandler
 
         lastTimeDamageTake = Time.time;
         CurrentHealth -= damageDealt;
+        anim.Play("Damage");
     }
 
 
