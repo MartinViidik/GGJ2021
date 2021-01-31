@@ -356,14 +356,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassPatch (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1167893169651906370, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197059865455004623, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.09
-      objectReference: {fileID: 0}
     - target: {fileID: 6325491510347584843, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -407,14 +399,6 @@ PrefabInstance:
     - target: {fileID: 6325491510347584843, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7076365505392427865, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 8917086410253616764, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
@@ -1144,10 +1128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1394525258059331479, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
-      propertyPath: bahEvent
-      value: event:/baaaa
-      objectReference: {fileID: 0}
     - target: {fileID: 7415346655467150290, guid: bcbf598a2ce54084a881367e2e92a4ee, type: 3}
       propertyPath: m_RootOrder
       value: 2

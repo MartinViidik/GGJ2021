@@ -260,6 +260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   maxHealth: 5
+  startBahPower: 0.5
+  bahPerGrass: 0.2
+  bahCosts: 0.3
   invincibleTime: 2
   anim: {fileID: 7415346656336734517}
 --- !u!114 &1394525258059331479
@@ -277,6 +280,7 @@ MonoBehaviour:
   entity: {fileID: 0}
   bahRange: 20
   playerState: {fileID: 6437673561895427143}
+  bahEvent: event:/baaaa
 --- !u!114 &1278652917
 MonoBehaviour:
   m_ObjectHideFlags: 0
