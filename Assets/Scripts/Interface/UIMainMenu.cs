@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class UIMainMenu : MonoBehaviour
 {
+    public TransitionController transition;
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        transition.StartCoroutine("StartGame");
     }
 
     public void ExitGame()

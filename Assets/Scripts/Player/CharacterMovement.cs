@@ -75,7 +75,14 @@ public class CharacterMovement : MonoBehaviour
 
     void onPlayerHealthUpdate(int health)
     {
-        Debug.Log(health);
+        if(health <= 0)
+        {
+            Debug.Log("Player dead");
+            CanMove = false;
+            rb.velocity = Vector3.zero;
+            GetComponent<Collider>().enabled = false;
+            GameEvents.current.PlayerDead();
+        }
     }
 
     public void onPickup(int interactableID, SOItem item)

@@ -85,4 +85,10 @@ public class GameEvents : MonoBehaviour
         if (onSheepRescued != null)
             onSheepRescued(rescuedSheep);
     }
+
+    public event Action onPlayerDead;
+    public void PlayerDead()
+    {
+        onPlayerDead();
+    }
 }
