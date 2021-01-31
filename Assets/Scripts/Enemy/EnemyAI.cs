@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool ReachedDestination;
     bool isStunned;
+    bool playerDead = false;
 
     private void Awake()
     {
@@ -30,6 +31,14 @@ public class EnemyAI : MonoBehaviour
         stats = GetComponent<EnemyStats>();
         startPosition = transform;
         GameEvents.current.onStunEntity += OnStun;
+        GameEvents.current.onPlayerDead += OnPlayerDead;
+    }
+
+    private void OnPlayerDead()
+    {
+        playerDead = true;
+        //Increase wander radius to avoid enemy wandering around the player corpse
+        stats.WanderRadius = 50;
     }
 
     private void OnDestroy()
@@ -102,7 +111,7 @@ public class EnemyAI : MonoBehaviour
                             StartCoroutine("GetNewPosition");
                         }
                     }
-                    if (PlayerDistance() < stats.SightDistance)
+                    if (PlayerDistance() < stats.SightDistance && !playerDead)
                     {
                         ActiveState = EnemyState.CHASE;
                     }
@@ -114,6 +123,10 @@ public class EnemyAI : MonoBehaviour
                     if (ai.maxSpeed != stats.ChaseSpeed)
                         ai.maxSpeed = stats.ChaseSpeed;
                     ai.destination = playerRef.transform.position;
+                    if (PlayerDistance() > stats.SightDistance || !playerDead)
+                    {
+                        ActiveState = EnemyState.WANDER;
+                    }
                     //Debug.Log("Entered chase state");
                 }
                 break;

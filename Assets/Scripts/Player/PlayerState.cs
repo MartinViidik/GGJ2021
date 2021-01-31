@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerState : StateHandler
 {
     public int maxHealth = 5;
+    [Range(0f, 1f)] public float startBahPower = 0.5f;
+    [Range(0f, 1f)] public float bahPerGrass = 0.2f;
+    [Range(0f, 1f)] public float bahCosts = 0.3f;
     public Dictionary<string, Item> inventory = new Dictionary<string, Item>();
 
     public float invincibleTime = 2f;
@@ -12,6 +15,7 @@ public class PlayerState : StateHandler
     public Animator anim;
 
     int currentHealth;
+    float currentBahPower;
 
     public int CurrentHealth
     {
@@ -22,6 +26,16 @@ public class PlayerState : StateHandler
             GameEvents.current.PlayerHealthUpdate(value);
         }
     }
+    public float CurrentBahPower
+    {
+        get { return currentBahPower; }
+        set
+        {
+            currentBahPower = value;
+            Mathf.Clamp01(currentBahPower);
+            GameEvents.current.PlayerBahUpdate(value);
+        }
+    }
 
 
     private void Start()
@@ -29,6 +43,7 @@ public class PlayerState : StateHandler
         GameEvents.current.onDealDamage += OnDamage;
         GameEvents.current.onPickup += OnPickup;
         GameEvents.current.onItemUsage += OnItemUsage;
+        GameEvents.current.onTrigger += OnTrigger;
         Invoke("SetupPlayer", 0);
     }
 
@@ -37,15 +52,30 @@ public class PlayerState : StateHandler
         GameEvents.current.onDealDamage -= OnDamage;
         GameEvents.current.onPickup -= OnPickup;
         GameEvents.current.onItemUsage -= OnItemUsage;
+        GameEvents.current.onTrigger -= OnTrigger;
     }
 
     void SetupPlayer()
     {
         CurrentHealth = maxHealth;
+        CurrentBahPower = startBahPower;
     }
 
     private void Update()
     {
+    }
+
+
+    public bool CanIBah()
+    {
+        if (CurrentBahPower > bahCosts)
+            return true;
+        return false;
+    }
+
+    public void BahBeDone()
+    {
+        CurrentBahPower -= bahCosts;
     }
 
 
@@ -87,5 +117,18 @@ public class PlayerState : StateHandler
                 inventory.Remove(item.name);
         }
         GameEvents.current.PlayerInventoryUpdate(inventory);
+    }
+
+    void OnTrigger (int interactableID, string triggerName)
+    {
+        if (interactableID != 0 && interactableID != entity.entityID)
+            return;
+
+        switch (triggerName)
+        {
+            case "BahUp":
+                CurrentBahPower += bahPerGrass;
+                break;
+        }
     }
 }
