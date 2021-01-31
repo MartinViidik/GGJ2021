@@ -8,7 +8,7 @@
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{61699e95-e91e-4e2a-9412-100c9a9884aa}</destination>
+			<destination>{4000601d-57b1-453f-9cd0-a1e52eedbcc9}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{1f8da7dc-227b-47d0-8c49-e68b0f4cf541}</destination>
@@ -224,7 +224,7 @@
 	<object class="MixerBusFader" id="{acfd435e-3f1e-4139-97ea-93f83878a23f}" />
 	<object class="SFXReverbEffect" id="{44cdd517-002b-4c9b-b363-d05ba42603ca}">
 		<property name="decayTime">
-			<value>2500</value>
+			<value>1700</value>
 		</property>
 		<property name="highCut">
 			<value>1100</value>
