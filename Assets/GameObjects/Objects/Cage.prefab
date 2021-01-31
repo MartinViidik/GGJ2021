@@ -612,7 +612,7 @@ MonoBehaviour:
   pickupEvent: []
   triggerEvents:
   - name: cage
-    value: event:/cage
+    value: event:/SFX/cage
 --- !u!1001 &8690994314712057439
 PrefabInstance:
   m_ObjectHideFlags: 0

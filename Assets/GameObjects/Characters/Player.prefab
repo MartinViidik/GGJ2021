@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7415346655028188109}
   - component: {fileID: 7415346655028188106}
   - component: {fileID: 999078435531711934}
+  - component: {fileID: 6867020380554522990}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -162,6 +163,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &6867020380554522990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415346655028188110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d9f68190063a845905a8fcd45596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicEvent: event:/Music/Music
+  AtmosphereEvent: event:/Atmosphere
 --- !u!1 &7415346655467150293
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +295,7 @@ MonoBehaviour:
   entity: {fileID: 0}
   bahRange: 20
   playerState: {fileID: 6437673561895427143}
-  bahEvent: event:/baaaa
+  bahEvent: event:/SFX/baaaa
 --- !u!114 &1278652917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,14 +323,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   onlyPlayOwnSounds: 1
-  damageEvent: event:/damage
+  damageEvent: event:/SFX/damage
   stunEvent: 
   destroyEvent: 
   usageEvent: []
   pickupEvent:
   - name: key
-    value: event:/keys
-  triggerEvents: []
+    value: event:/SFX/keys
+  triggerEvents:
+  - name: BahUp
+    value: event:/Chewing
 --- !u!1 &7415346656336734520
 GameObject:
   m_ObjectHideFlags: 0
