@@ -8,6 +8,10 @@ public class PlayerInteraction : InteractionHandler
     public PlayerState playerState;
 
 
+    [FMODUnity.EventRef]
+    public string bahEvent;
+
+
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Object")
@@ -22,6 +26,12 @@ public class PlayerInteraction : InteractionHandler
     {
         if (Input.GetButtonDown("Bah"))
         {
+            if (!playerState.CanIBah())
+                return;
+
+            playerState.BahBeDone();
+            FMODUnity.RuntimeManager.PlayOneShot(bahEvent, transform.position);
+
             Collider[] colliderList = Physics.OverlapSphere(transform.position, bahRange, LayerMask.GetMask("Interactable"));
             foreach (Collider c in colliderList)
             {

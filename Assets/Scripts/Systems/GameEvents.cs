@@ -22,6 +22,13 @@ public class GameEvents : MonoBehaviour
             onPlayerHealthUpdate(currentHealth);
     }
 
+    public event Action<float> onPlayerBahUpdate;
+    public void PlayerBahUpdate(float currentBah)
+    {
+        if (onPlayerBahUpdate != null)
+            onPlayerBahUpdate(currentBah);
+    }
+
 
     public event Action<int, int> onDealDamage;
     public void DealDamage(int interactableID, int damageAmount)
