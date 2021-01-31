@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class UIMainMenu : MonoBehaviour
 {
     public TransitionController transition;
+
+    public GameObject about;
+    public GameObject panel;
     public void StartGame()
     {
         transition.gameObject.SetActive(true);
@@ -21,5 +24,17 @@ public class UIMainMenu : MonoBehaviour
     {
         transition.gameObject.SetActive(true);
         transition.StartCoroutine("BackToMenu");
+    }
+
+    public void About()
+    {
+        about.SetActive(true);
+        panel.SetActive(false);
+    }
+
+    public void Back()
+    {
+        panel.SetActive(true);
+        about.SetActive(false);
     }
 }

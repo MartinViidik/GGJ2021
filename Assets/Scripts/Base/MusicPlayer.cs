@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,6 @@ public class MusicPlayer : MonoBehaviour
     [FMODUnity.EventRef]
     public string AtmosphereEvent = "";
     FMOD.Studio.EventInstance atmospherePlayer;
-
 
     void Start()
     {

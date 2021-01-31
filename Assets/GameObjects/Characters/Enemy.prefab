@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8478066686561881649}
   - component: {fileID: 2109105083019727839}
   - component: {fileID: 8478066686561881655}
-  - component: {fileID: 4622723674918314316}
   - component: {fileID: 2109105083019727836}
   - component: {fileID: 2109105083019727834}
   - component: {fileID: 151160839}
@@ -19,9 +18,7 @@ GameObject:
   - component: {fileID: 1543892539}
   - component: {fileID: 1543892545}
   - component: {fileID: 1543892546}
-  - component: {fileID: 7699143160863151803}
   - component: {fileID: 5042112482687120249}
-  - component: {fileID: 1448859479485868979}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -88,23 +85,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &4622723674918314316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8478066686561881654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97094b31079d92429e375bf7bd7da45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WanderRadius: 10
-  SightDistance: 20
-  WanderSpeed: 4
-  ChaseSpeed: 5
-  StunTimer: 6
 --- !u!136 &2109105083019727836
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -181,6 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  onlyOneUsage: 0
+  requiredItems: []
   damageInteractions:
   - interactionType: 1
     targetType: 1
@@ -191,6 +173,7 @@ MonoBehaviour:
     stunPower: 3
   pickupInteractions: []
   destroyInteractions: []
+  triggerInteractions: []
 --- !u!114 &1543892539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,23 +217,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WanderRadius: 10
   SightDistance: 20
-  WanderSpeed: 4
-  ChaseSpeed: 5
+  WanderSpeed: 8
+  ChaseSpeed: 15
   StunTimer: 6
---- !u!114 &7699143160863151803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8478066686561881654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40741c77d3223874e82b0c38fcafc269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 5042112482687120249}
-  anim: {fileID: 8478066687563594966}
 --- !u!114 &5042112482687120249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,23 +235,6 @@ MonoBehaviour:
   ActiveState: 0
   playerRef: {fileID: 0}
   ReachedDestination: 0
---- !u!114 &1448859479485868979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8478066686561881654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97094b31079d92429e375bf7bd7da45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WanderRadius: 10
-  SightDistance: 20
-  WanderSpeed: 4
-  ChaseSpeed: 5
-  StunTimer: 6
 --- !u!1 &8478066687563594971
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8478066687563594971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.37, z: 0}
+  m_LocalPosition: {x: 0, y: 1.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8478066686561881649}
@@ -355,8 +307,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2992010508986510385, guid: 06e9677c5dbc5104997b5eb95aa49fb7, type: 3}
-  m_Color: {r: 0.8396226, g: 0.20198467, b: 0.20198467, a: 1}
+  m_Sprite: {fileID: 8770878021091593337, guid: fb75e1611ac6d934c8008151cee269a0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -376,7 +328,7 @@ Animator:
   m_GameObject: {fileID: 8478066687563594971}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bce5735977884b048944d5d24d0e89a8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6b409aee13d48934282f0c621bff37ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

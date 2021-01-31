@@ -5,16 +5,12 @@ using UnityEngine;
 public class WinCondition : MonoBehaviour
 {
     public Entity entity;
+    public TransitionController transition;
     // Start is called before the first frame update
-    private void Start()
-    {
-        entity = GetComponent<Entity>();
-        GameEvents.current.onTrigger += OnTrigger;
-    }
 
-    void OnTrigger(int interactableID, string triggerID)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("GameWin");
+        transition.GetComponent<TransitionController>().StartCoroutine("BackToMenu");
     }
 
 }

@@ -35,7 +35,7 @@ public class TransitionController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         ShouldReveal = false;
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 
     public IEnumerator StartGame()
