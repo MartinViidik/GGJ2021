@@ -32,7 +32,7 @@ public class PlayerState : StateHandler
         set
         {
             currentBahPower = value;
-            Mathf.Clamp01(currentBahPower);
+            currentBahPower = Mathf.Clamp01(currentBahPower);
             GameEvents.current.PlayerBahUpdate(value);
         }
     }

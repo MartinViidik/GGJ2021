@@ -23,6 +23,8 @@ public class SoundPlayer : MonoBehaviour
     public NamedFmodSound[] pickupEvent;
     public NamedFmodSound[] triggerEvents;
 
+    public NamedFmodSound[] manualEvents;
+
     private void Awake()
     {
         entity = GetComponent<Entity>();
@@ -47,6 +49,16 @@ public class SoundPlayer : MonoBehaviour
         GameEvents.current.onItemUsage -= OnItemUsage;
         GameEvents.current.onStunEntity -= OnStunEntity;
         GameEvents.current.onTrigger -= OnTrigger;
+    }
+
+
+    public void PlaySound(string soundName)
+    {
+        foreach (NamedFmodSound s in manualEvents)
+        {
+            if (s.name == "" || s.name == soundName)
+                FMODUnity.RuntimeManager.PlayOneShot(s.value, transform.position);
+        }
     }
 
 
