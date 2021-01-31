@@ -18,12 +18,6 @@ public class TransitionController : MonoBehaviour
         GetComponent<Image>();
         image.material.SetFloat("_CutOff", 1);
         ShouldReveal = true;
-        GameEvents.current.onPlayerDead += OnPlayerDead;
-    }
-
-    private void OnPlayerDead()
-    {
-        StartCoroutine("RestartLevel");
     }
 
     private void Update()
@@ -36,7 +30,7 @@ public class TransitionController : MonoBehaviour
         }
     }
 
-    public IEnumerator RestartLevel()
+    public IEnumerator BackToMenu()
     {
         yield return new WaitForSeconds(1f);
         ShouldReveal = false;

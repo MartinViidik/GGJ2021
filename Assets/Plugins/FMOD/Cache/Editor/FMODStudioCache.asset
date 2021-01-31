@@ -201,7 +201,7 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637476848677891421
+  lastModified: 637476852318445914
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -220,7 +220,7 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476848677722112
+  lastModified: 637476852318236462
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -269,11 +269,51 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1873118166365340321}
+  - {fileID: -664807878877057087}
   MinDistance: 0
   MaxDistance: 0
   Length: 540
+--- !u!114 &-3214677332666427557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Distance
+  m_EditorClassIdentifier: 
+  Name: Distance
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1190999676689908911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/walking
+  m_EditorClassIdentifier: 
+  Name: walking
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-664807878877057087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,7 +362,7 @@ MonoBehaviour:
   - {fileID: 9166602502022071073}
   StringsBanks:
   - {fileID: -4269994559951155493}
-  stringsBankWriteTime: 637476848677722112
+  stringsBankWriteTime: 637476852318236462
   cacheVersion: 6
 --- !u!114 &1873118166365340321
 MonoBehaviour:
@@ -472,7 +512,7 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637476848677941544
+  lastModified: 637476852318525691
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -496,7 +536,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5409101665268191122}
+  - {fileID: -3214677332666427557}
   MinDistance: 0
   MaxDistance: 0
   Length: 155666
@@ -558,7 +598,7 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637475508884737000
+  lastModified: 637475512933339884
   LoadResult: 0
   FileSizes: []
   Exists: 1
