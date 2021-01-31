@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/keys
   guid: 42155e4eb5f46b4bbfb143e44317de5c
-  Banks:
-  - {fileID: 4548296785048136639}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -37,8 +36,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/baaaa
   guid: 28bb710747f007438911cee9330126cb
-  Banks:
-  - {fileID: 4548296785048136639}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -65,6 +63,46 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
+  Exists: 0
+--- !u!114 &-6750356936734391269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/walking
+  m_EditorClassIdentifier: 
+  Name: walking
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-6521359825674339625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Distance
+  m_EditorClassIdentifier: 
+  Name: Distance
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-5682610422849294110
 MonoBehaviour:
@@ -85,7 +123,27 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-4965852168434466400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/AreaDistance
+  m_EditorClassIdentifier: 
+  Name: AreaDistance
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-4751669990778018964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,8 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/damage
   guid: 5bc437065d2971458c00a7d206fbe895
-  Banks:
-  - {fileID: 4548296785048136639}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -124,7 +181,7 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637476469506843923
+  lastModified: 637476808532223828
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -143,11 +200,11 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476469506674618
+  lastModified: 637476808531114267
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1186
+    Value: 1130
   Exists: 1
 --- !u!114 &-1190999676689908911
 MonoBehaviour:
@@ -188,18 +245,12 @@ MonoBehaviour:
   - {fileID: 4548296785048136639}
   EditorEvents:
   - {fileID: 4603795129861173612}
-  - {fileID: -8783287643881925477}
-  - {fileID: -8803741502559546539}
-  - {fileID: -4751669990778018964}
-  - {fileID: 2115552721312446841}
-  - {fileID: 2132738528376797257}
-  - {fileID: 2387531655774613957}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9166602502022071073}
   StringsBanks:
   - {fileID: -4269994559951155493}
-  stringsBankWriteTime: 637476469506674618
+  stringsBankWriteTime: 637476808531114267
   cacheVersion: 6
 --- !u!114 &2115552721312446841
 MonoBehaviour:
@@ -215,13 +266,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/footsteps
   guid: 5d7f4b2d676912488595fe3f2709b13a
-  Banks:
-  - {fileID: 4548296785048136639}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5682610422849294110}
+  - {fileID: -6750356936734391269}
   MinDistance: 0
   MaxDistance: 0
   Length: 540
@@ -239,8 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Atmosphere/Atmosphere
   guid: 653e911a4ee372448e1ed90ba80cca8f
-  Banks:
-  - {fileID: 4548296785048136639}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -262,8 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/cage
   guid: e022fec351563b479ab3f7b180b5bc7a
-  Banks:
-  - {fileID: 4548296785048136639}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -286,8 +334,8 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637476469506914697
-  LoadResult: 0
+  lastModified: 637476808533937003
+  LoadResult: 13
   FileSizes: []
   Exists: 1
 --- !u!114 &4603795129861173612
@@ -310,7 +358,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -8447772007453641899}
+  - {fileID: -6521359825674339625}
   MinDistance: 0
   MaxDistance: 0
   Length: 155666
@@ -349,7 +397,7 @@ MonoBehaviour:
   Path: FMOD/GGJ2021_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637475508884737000
+  lastModified: 637476808531064289
   LoadResult: 0
   FileSizes: []
   Exists: 1
