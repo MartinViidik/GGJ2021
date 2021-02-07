@@ -1337,6 +1337,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8478066687563594964, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478066687563594965, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478066687563594965, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478066687563594965, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478066687563594965, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997d68ab052a7404782b57842ef06c6f, type: 3}
 --- !u!1001 &618949471
@@ -1470,6 +1490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1485281551}
     m_Modifications:
+    - target: {fileID: 739361770, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
+      propertyPath: triggerInteractions.Array.data[1].targetType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1167893169651906370, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
       propertyPath: m_Name
       value: GrassPatch (7)
@@ -3050,6 +3074,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2333806505124180076, guid: cc0f3e71e61675b42bfdf0da8c7813e9, type: 3}
+      propertyPath: triggerInteractions.Array.data[0].targetType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2333806505124180077, guid: cc0f3e71e61675b42bfdf0da8c7813e9, type: 3}
       propertyPath: m_Name
       value: KeyObject
@@ -3096,6 +3124,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333806505124180078, guid: cc0f3e71e61675b42bfdf0da8c7813e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333806505124180080, guid: cc0f3e71e61675b42bfdf0da8c7813e9, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4334,6 +4366,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1485281551}
     m_Modifications:
+    - target: {fileID: 739361770, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
+      propertyPath: triggerInteractions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 739361770, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
+      propertyPath: triggerInteractions.Array.data[1].targetType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 739361770, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
+      propertyPath: triggerInteractions.Array.data[1].triggerName
+      value: GrassTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 739361770, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
+      propertyPath: triggerInteractions.Array.data[1].interactionType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1167893169651906370, guid: d7968491ffc7d0d4685b40dd88af5ea8, type: 3}
       propertyPath: m_Name
       value: GrassPatch (4)
@@ -5082,6 +5130,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5117102749206209020, guid: 5feccf401c51d764ab186b0f799c2309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889447723290041448, guid: 5feccf401c51d764ab186b0f799c2309, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
