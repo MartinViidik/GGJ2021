@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2333806504870427533}
   - component: {fileID: 2333806504870427532}
+  - component: {fileID: 8724142622959443038}
   m_Layer: 9
   m_Name: KeySprite
   m_TagString: Untagged
@@ -82,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8724142622959443038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333806504870427530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059482a4028367a44b3bce1d3cc8dc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopped: 0
+  triggerID: ROTATEALL
+  maxTriggerDelay: 10
+  minStart: {x: 0, y: 0, z: 0}
+  maxStart: {x: 0, y: 360, z: 0}
+  minSpeed: {x: 0, y: 1, z: 0}
+  maxSpeed: {x: 0, y: 2, z: 0}
 --- !u!1 &2333806505124180077
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +113,6 @@ GameObject:
   - component: {fileID: 2333806505124180078}
   - component: {fileID: 2333806505124180079}
   - component: {fileID: 2333806505124180076}
-  - component: {fileID: 2333806505124180081}
   - component: {fileID: 2333806505124180080}
   m_Layer: 9
   m_Name: KeyObject
@@ -143,6 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  interactionTooltip: press [E] to pickup
+  missingRequirementTip: 
+  tooltipPosition: {x: 0, y: 2.2, z: 0}
+  onlyOneUsage: 0
   requiredItems: []
   damageInteractions: []
   stunInteractions: []
@@ -154,22 +177,6 @@ MonoBehaviour:
   - interactionType: 2
     targetType: 0
   triggerInteractions: []
---- !u!114 &2333806505124180081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2333806505124180077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059482a4028367a44b3bce1d3cc8dc62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minStart: {x: 0, y: 0, z: 0}
-  maxStart: {x: 0, y: 360, z: 0}
-  minSpeed: {x: 0, y: 1, z: 0}
-  maxSpeed: {x: 0, y: 2, z: 0}
 --- !u!136 &2333806505124180080
 CapsuleCollider:
   m_ObjectHideFlags: 0

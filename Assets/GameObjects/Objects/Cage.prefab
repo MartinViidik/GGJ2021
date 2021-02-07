@@ -566,6 +566,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  interactionTooltip: '[E] to use Key'
+  missingRequirementTip: Missing Key
+  tooltipPosition: {x: 0, y: 3, z: 0}
   onlyOneUsage: 1
   requiredItems:
   - name: key
@@ -613,6 +616,7 @@ MonoBehaviour:
   triggerEvents:
   - name: cage
     value: event:/SFX/cage
+  manualEvents: []
 --- !u!1001 &8690994314712057439
 PrefabInstance:
   m_ObjectHideFlags: 0

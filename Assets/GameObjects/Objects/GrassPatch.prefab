@@ -62,6 +62,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  interactionTooltip: '[E]at Grass'
+  missingRequirementTip: 
+  tooltipPosition: {x: 1, y: 0.6, z: 1}
   onlyOneUsage: 0
   requiredItems: []
   damageInteractions: []

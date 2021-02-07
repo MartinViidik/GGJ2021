@@ -6,6 +6,11 @@ using System;
 public class InteractableObject : MonoBehaviour
 {
     public Entity entity;
+    public string interactionTooltip = "press [E] to interact";
+    public string missingRequirementTip = "missing item";
+    public Vector3 tooltipPosition = new Vector3(0, 1, 0);
+    GameObject tooltip;
+
     void Awake()
     {
         entity = GetComponent<Entity>();
@@ -45,6 +50,44 @@ public class InteractableObject : MonoBehaviour
     public DestroyInteraction[] destroyInteractions;
     public TriggerInteraction[] triggerInteractions;
 
+    public void AddTooltip(GameObject prefab, Dictionary<string, Item> inventory)
+    {
+        RemoveTooltip();
+        if (onlyOneUsage && objectUsed)
+            return;
+        tooltip = Instantiate(prefab, transform);
+        tooltip.transform.localPosition = tooltipPosition;
+        if (CheckRequirements(inventory))
+            tooltip.GetComponent<InteractableTooltip>().SetTooltip(interactionTooltip);
+        else
+            tooltip.GetComponent<InteractableTooltip>().SetTooltip(missingRequirementTip);
+    }
+
+    public void RemoveTooltip()
+    {
+        if (tooltip != null)
+            Destroy(tooltip);
+    }
+
+    public bool HasAction()
+    {
+        foreach (DamageInteraction i in damageInteractions)
+            if (i.interactionType == InteractionType.Action) return true;
+
+        foreach (StunInteraction i in stunInteractions)
+            if (i.interactionType == InteractionType.Action) return true;
+
+        foreach (PickupInteraction i in pickupInteractions)
+            if (i.interactionType == InteractionType.Action) return true;
+
+        foreach (DestroyInteraction i in destroyInteractions)
+            if (i.interactionType == InteractionType.Action) return true;
+
+        foreach (TriggerInteraction i in triggerInteractions)
+            if (i.interactionType == InteractionType.Action) return true;
+
+        return false;
+    }
 
     public virtual void OnTouch(int interactionID, Dictionary<string, Item> inventory)
     {
@@ -62,6 +105,8 @@ public class InteractableObject : MonoBehaviour
         Item.UseItems(interactionID, requiredItems);
 
         CheckBasics(interactionID, InteractionType.Action);
+        objectUsed = true;
+        RemoveTooltip();
     }
 
     public virtual void OnBah(int interactionID, Dictionary<string, Item> inventory)

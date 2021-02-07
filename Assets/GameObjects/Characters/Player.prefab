@@ -333,6 +333,7 @@ MonoBehaviour:
   triggerEvents:
   - name: BahUp
     value: event:/Chewing
+  manualEvents: []
 --- !u!1 &7415346656336734520
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +486,7 @@ MonoBehaviour:
   interactorAnchor: {fileID: 6620794372682391171}
   interactionRange: 3
   playerState: {fileID: 6437673561895427143}
+  tooltipPrefab: {fileID: 7128849940409880621, guid: 745446e58fc40864583de2b4d3c14ddf, type: 3}
 --- !u!33 &6720812379631798495
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -543,7 +545,7 @@ SphereCollider:
   m_GameObject: {fileID: 8799425233484166757}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 3.5
   m_Center: {x: 0, y: 0, z: 0}

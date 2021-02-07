@@ -9,6 +9,8 @@ public class PlayerInteractor : MonoBehaviour
     public float interactionRange = 3f;
     public PlayerState playerState;
 
+    public GameObject tooltipPrefab;
+    InteractableObject lastObjectInRange;
 
     private void FixedUpdate()
     {
@@ -21,17 +23,30 @@ public class PlayerInteractor : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Interact"))
+        Collider[] colliderList = Physics.OverlapSphere(transform.position, interactionRange, LayerMask.GetMask("Interactable"));
+        InteractableObject iObject = null;
+
+        for (int i = 0; i < colliderList.Length && iObject == null; i++)
         {
-            Collider[] colliderList = Physics.OverlapSphere(transform.position, interactionRange, LayerMask.GetMask("Interactable"));
-            foreach (Collider c in colliderList)
+            InteractableObject temp = colliderList[i].gameObject.GetComponent<InteractableObject>();
+            if (temp != null && (temp.tag == "Enemy" || temp.tag == "Object") && temp.HasAction())
+                iObject = colliderList[i].gameObject.GetComponent<InteractableObject>();
+        }
+
+        if (lastObjectInRange != iObject && lastObjectInRange != null)
+        {
+            lastObjectInRange.RemoveTooltip();
+            lastObjectInRange = null;
+        }
+
+        if (iObject != null)
+        {
+            if (Input.GetButtonDown("Interact"))
+                iObject.OnAction(entity.entityID, playerState.inventory);
+            if (lastObjectInRange != iObject)
             {
-                if (c.tag == "Enemy" || c.tag == "Object")
-                {
-                    InteractableObject iObject = c.gameObject.GetComponent<InteractableObject>();
-                    if (iObject != null)
-                        iObject.OnAction(entity.entityID, playerState.inventory);
-                }
+                iObject.AddTooltip(tooltipPrefab, playerState.inventory);
+                lastObjectInRange = iObject;
             }
         }
     }
